@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="CCVCSample" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +16,42 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zed-C2-6dB">
+                                <rect key="frame" x="140" y="103" width="46" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="PuG-n0-Q9Z"/>
+                                    <constraint firstAttribute="width" constant="46" id="sLO-QN-53B"/>
+                                </constraints>
+                                <state key="normal" title="Flip"/>
+                                <connections>
+                                    <action selector="doFlip:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6G3-1a-KCN"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xBI-5z-cj1">
+                                <rect key="frame" x="140" y="153" width="320" height="294"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="320" id="OOg-p9-K9l"/>
+                                    <constraint firstAttribute="height" constant="294" id="T5d-q6-FVa"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="xBI-5z-cj1" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="A90-Bz-cEy"/>
+                            <constraint firstItem="xBI-5z-cj1" firstAttribute="top" secondItem="Zed-C2-6dB" secondAttribute="bottom" constant="20" id="Xfw-Mu-e7q"/>
+                            <constraint firstItem="xBI-5z-cj1" firstAttribute="leading" secondItem="Zed-C2-6dB" secondAttribute="leading" id="dtF-hX-cNo"/>
+                            <constraint firstItem="xBI-5z-cj1" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="lKV-hN-d8K"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="panel" destination="xBI-5z-cj1" id="NqU-Rr-rHt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="240" y="429"/>
         </scene>
     </scenes>
 </document>
